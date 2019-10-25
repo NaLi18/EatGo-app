@@ -8,10 +8,11 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, 'dist', 'EatGo-app')))
 
 //const newsUrl = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e06f5b3da2be4501af757078cf03a985`
-const googlePLacesQueryUrl = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Albany&key=AIzaSyCFCDqcWZryyPAnPa8h_cJVAWemz-kOhYo"
+const googlePLacesQueryUrl = "https://maps.googleapis.com/maps/api/place/textsearch/json?key=AIzaSyCFCDqcWZryyPAnPa8h_cJVAWemz-kOhYo&query=restaurants+in+Albany"
 //app.get('/api/hello', (req, res) => res.send('Hello World!'))
 
 app.get('/api/eatgo', (req, res) => {
+    //const location = req.Config.place;
     request.get(googlePLacesQueryUrl)
     .pipe(res);
 });
