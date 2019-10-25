@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EatGoService } from '../eat-go.service';
 
 @Component({
   selector: 'app-eat-go',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./eat-go.component.css']
 })
 export class EatGoComponent implements OnInit {
-
-  constructor() { }
+  rests;
+  constructor(private EatGoApi: EatGoService) { }
 
   ngOnInit() {
+    this.EatGoApi.getRest().subscribe((data) => {
+      console.log(data);
+      this.rests = data['results'];
+    })
   }
 
 }
