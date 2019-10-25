@@ -8,10 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EatGoService {
   API_KEY:string ="AIzaSyCFCDqcWZryyPAnPa8h_cJVAWemz-kOhYo"
-  constructor(private router: ActivatedRoute, private httpClient: HttpClient){ }
+  constructor(private httpClient: HttpClient){ }
 
-  public getRest(place:string){
+  public getRest(id:string){
    // Config.heroesUrl = place;
+    console.log("logging from service"+id);
     return this.httpClient.get<Config>("http://localhost:3000/api/eatgo");
     //return this.httpClient.get<Config>(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e06f5b3da2be4501af757078cf03a985`);
   }

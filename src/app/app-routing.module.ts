@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { EatGoComponent } from './eat-go/eat-go.component';
 
 const routes: Routes = [
-  {path:'eatgo',component:EatGoComponent}
+  {path:'eatgo/:id',component:EatGoComponent}
 ];
 
 @NgModule({

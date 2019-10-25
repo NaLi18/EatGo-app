@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EatGoService } from '../eat-go.service';
 import { AppComponent } from '../app.component';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-eat-go',
   templateUrl: './eat-go.component.html',
@@ -8,12 +10,12 @@ import { AppComponent } from '../app.component';
 })
 export class EatGoComponent implements OnInit {
   rests;
-  place;
-  constructor(private myapp: AppComponent,private EatGoApi: EatGoService) { }
+  id;
+  constructor(private route: ActivatedRoute,private EatGoApi: EatGoService, private myapp: AppComponent) { }
 
   ngOnInit() {
-    this.place = this.myapp.someThing;
-    this.EatGoApi.getRest(this.place).subscribe((data) => {
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.EatGoApi.getRest(this.id).subscribe((data) => {
       console.log(data);
       this.rests = data['results'];
     })

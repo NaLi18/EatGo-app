@@ -1,6 +1,6 @@
-<a routerLink="/eatgo">EatGo</a>
+<a>EatGo</a>
 <form action="" (ngSubmit)="searchNow()">
     <input type="text" name="someThing" [(ngModel)]=someThing>
-    <input type="submit" value="search">
+    <input type="submit" value="search" routerLink="/eatgo/{{someThing}}">
 </form>
 <router-outlet></router-outlet>
