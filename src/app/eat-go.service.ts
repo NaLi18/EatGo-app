@@ -11,6 +11,7 @@ export class EatGoService {
 
   public getRest(){
     return this.httpClient.get<Config>(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Albany&key=${this.API_KEY}`);
+    //return this.httpClient.get<Config>(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e06f5b3da2be4501af757078cf03a985`);
   }
 }
 

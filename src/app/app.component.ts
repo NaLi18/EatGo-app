@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'EatGo-app';
+  someThing ="";
+  searchNow() :void{
+    console.log(this.someThing);
+  }
 }
