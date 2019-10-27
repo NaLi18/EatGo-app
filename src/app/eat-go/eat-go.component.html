@@ -1,9 +1,9 @@
-<p>Find Restaurant in {{id}}</p>
 <div *ngFor="let rest of rests">
     <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 py-3">
           <h2>{{rest.name}}</h2>
           <p>rating:{{rest.rating}}</p>
+          <p>{{rest.formatted_address}}</p>
         </div>
       <div class="shadow-sm mx-auto" >
       <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference={{rest.photos[0].photo_reference}}&key=AIzaSyCFCDqcWZryyPAnPa8h_cJVAWemz-kOhYo">
